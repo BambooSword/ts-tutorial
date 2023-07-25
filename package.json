@@ -1,0 +1,23 @@
+{
+  "name": "ts-tutorial",
+  "version": "1.0.0",
+  "description": "my learning project of Typescript [understanding-typescript](https://www.udemy.com/course/understanding-typescript/)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BambooSword/ts-tutorial.git"
+  },
+  "author": "BambooSword",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BambooSword/ts-tutorial/issues"
+  },
+  "homepage": "https://github.com/BambooSword/ts-tutorial#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
