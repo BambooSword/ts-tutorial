@@ -1,17 +1,14 @@
 import path from 'path'
 import webpack from 'webpack'
-// in case you run into any typescript error when configuring `devServer`
-import 'webpack-dev-server'
 
 const config: webpack.Configuration = {
   entry: './src/app.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
+    clean: true,
   },
-	mode: 'development',
-  devtool: 'inline-source-map',
+  mode: 'production',
   module: {
     rules: [
       {
