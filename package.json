@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/BambooSword/ts-tutorial#readme",
   "devDependencies": {
+    "@types/lodash": "^4.14.196",
     "lite-server": "^2.6.1",
     "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
@@ -27,5 +28,10 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "lodash": "^4.17.21"
   }
 }
