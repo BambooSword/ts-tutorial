@@ -15,7 +15,11 @@ axios.get<IRes>(url).then(response => {
   const ID = todo.id
   const title = todo.title
   const finished = todo.completed
-  console.log('🚀 ~ file: index.js:11 ~ title:', title)
-  console.log('🚀 ~ file: index.js:10 ~ ID:', ID)
-  console.log('🚀 ~ file: index.js:13 ~ finished:', finished)
+  logTodo(ID, title, finished)
 })
+
+const logTodo = (id: number, title: string, completed: boolean) => {
+  console.log('🚀 ~ file: index.js:11 ~ title:', title)
+  console.log('🚀 ~ file: index.js:10 ~ ID:', id)
+  console.log('🚀 ~ file: index.js:13 ~ finished:', completed)
+}
