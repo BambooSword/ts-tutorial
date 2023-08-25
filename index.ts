@@ -23,3 +23,29 @@ const logTodo = (id: number, title: string, completed: boolean) => {
   console.log('🚀 ~ file: index.js:10 ~ ID:', id)
   console.log('🚀 ~ file: index.js:13 ~ finished:', completed)
 }
+
+const JsonObj = '{"hello": "world"}'
+
+const a = JSON.parse(JsonObj)
+console.log('🚀 ~ file: index.ts:30 ~ a:', a)
+
+const todayWeather = {
+  date: new Date(),
+  weather: 'sunny',
+}
+
+const logWeather = ({ date, weather }: { date: Date; weather: string }) => {
+  console.log('====================================')
+  console.log(date)
+  console.log(weather)
+  console.log('====================================')
+}
+
+logWeather(todayWeather)
+
+const threeDimensional = [
+  [
+    ['365', '1001'],
+    ['fairy', 'Cyclops'],
+  ],
+]
