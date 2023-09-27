@@ -3,9 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Parcel is awesome</title>
+	<title>Parcel is awesome1</title>
+	<style>
+		html,body{
+			height: 100%;
+		}
+	</style>
 </head>
 <body>
-	<script src="./src/index.ts"></script>
+	<div id="map" style="height: 100%;"></div>
+	<script 
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXKpDpyZouN10URCASIi3FgpatruFGpKE&" defer>
+</script>
+	<script  type="module" src="./src/index.ts"></script>
 </body>
 </html>

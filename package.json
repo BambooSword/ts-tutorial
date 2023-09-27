@@ -11,5 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "parcel": "^2.9.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@types/google.maps": "^3.54.1"
   }
 }
