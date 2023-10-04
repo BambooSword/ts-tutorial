@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker'
-export class User {
+import type { ITarget } from './CustomMap'
+export class User implements ITarget {
   name: string
   location: {
     lat: number // latitude
@@ -12,5 +13,8 @@ export class User {
       lat: faker.location.latitude(),
       lng: faker.location.longitude(),
     }
+  }
+  markerContent() {
+    return `Hi, I am ${this.name}`
   }
 }

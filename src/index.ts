@@ -15,7 +15,6 @@ console.log('🚀 ~ file: index.ts:16 ~ map ~ google:', google)
 //     lng: 0,
 //   },
 // })
-
 const map = new CustomMap('map')
 map.addMarker(user)
 map.addMarker(company)
