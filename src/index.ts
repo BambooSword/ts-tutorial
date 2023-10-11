@@ -1,26 +1,27 @@
-console.log('====================================')
-console.log('hi 123     ')
-console.log('====================================')
-function bubbleSort(origin: number[]) {
-  if (!Array.isArray(origin) || !origin.length) return
-  for (let i = 0; i < origin.length - 1; i++) {
-    const element = origin[i]
-    for (let j = i + 1; j < origin.length; j++) {
-      const follow = origin[j]
-      if (follow < element) swap(origin, i, j)
+class Sorter {
+  constructor(public collection: number[] | string) {}
+  bubbleSort() {
+    const { length } = this.collection
+    for (let i = length - 1; i >= 0; i--) {
+      for (let j = 0; j < i; j++) {
+        const element = this.collection[j]
+        const follow = this.collection[j + 1]
+        if (follow < element) this.swap(j, j + 1)
+      }
+    }
+    return this.collection
+  }
+
+  swap(i: number, j: number) {
+    if (this.collection instanceof Array) {
+      ;[this.collection[j], this.collection[i]] = [
+        this.collection[i],
+        this.collection[j],
+      ]
+    } else {
     }
   }
-  return origin
 }
-function swap(arr: number[], i: number, j: number) {
-  // const a = arr[i]
-  // const b = arr[j]
-  // arr[i] = b
-  // arr[j] = a
-  ;[arr[j], arr[i]] = [arr[i], arr[j]]
-}
-
-console.log(
-  '🚀 ~ file: index.ts:23 ~ bubbleSort:',
-  bubbleSort([9, 8, 7, 0, 10])
-)
+const mySorter = new Sorter([9, 3, 7, 2])
+mySorter.bubbleSort()
+console.log('🚀 ~ file: index.ts:24 ~ mySorter hello:==》', mySorter.collection)
