@@ -3,16 +3,17 @@ interface Sortable {
   compare(i: number, j: number): boolean
   length: number
 }
-class Sorter {
-  constructor(public collection: Sortable) {}
+abstract class Sorter {
+  abstract compare(leftIndex: number, rightIndex: number): boolean
+  abstract swap(leftIndex: number, rightIndex: number): void
+  abstract length: number
   bubbleSort() {
-    const { length } = this.collection
+    const { length } = this
     for (let i = length - 1; i >= 0; i--) {
       for (let j = 0; j < i; j++) {
-        if (this.collection.compare(j, j + 1)) this.collection.swap(j, j + 1)
+        if (this.compare(j, j + 1)) this.swap(j, j + 1)
       }
     }
-    return this.collection
   }
 }
 

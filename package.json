@@ -2,6 +2,7 @@
   "name": "ts-tutorial",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "dependencies": {
     "concurrently": "^8.2.1",
