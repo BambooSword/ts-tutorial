@@ -180,7 +180,7 @@ class ProjectItem
   extends Component<HTMLUListElement, HTMLLIElement>
   implements Draggable
 {
-  get persions() {
+  get persons() {
     if (this.project.people === 1) {
       return '1 person'
     }
@@ -200,7 +200,7 @@ class ProjectItem
 
   renderContent(): void {
     this.element.querySelector('h2')!.textContent = this.project.title
-    this.element.querySelector('h3')!.textContent = this.persions + ' assigned'
+    this.element.querySelector('h3')!.textContent = this.persons + ' assigned'
     this.element.querySelector('p')!.textContent = this.project.description
   }
 
@@ -274,7 +274,9 @@ class ProjectList
 
     projectState.moveProject(
       dragId,
-      this.type === ProjectStatus.Active ? ProjectStatus.Active : ProjectStatus.Finished
+      this.type === ProjectStatus.Active
+        ? ProjectStatus.Active
+        : ProjectStatus.Finished
     )
     console.log(projectState)
     console.log('====================================')
@@ -370,3 +372,59 @@ const finishedPrjList = new ProjectList(ProjectStatus.Finished)
 // finished 9.13
 // next 9.14
 // https://www.bilibili.com/video/BV1MF411T7rn?p=121&spm_id_from=pageDriver&vd_source=eb259cc44017f034cbde32b356136722
+
+// 冒泡排序
+
+const bubbleSort = (arr: number[]) => {
+  const len = arr.length
+  for (let i = 0; i < len; i++) {
+    let flag = false
+    for (let j = 0; j < len - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        flag = true
+        ;[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+      }
+    }
+    if (!flag) break
+  }
+  return arr
+}
+
+// 堆排序
+
+const heapify = (arr: number[], i: number, len: number) => {
+  let largest = i
+  const left = 2 * i + 1
+  const right = 2 * i + 2
+
+  if (left < len && arr[left] > arr[largest]) {
+    largest = left
+  }
+
+  if (right < len && arr[right] > arr[largest]) {
+    largest = right
+  }
+
+  if (largest !== i) {
+    ;[arr[i], arr[largest]] = [arr[largest], arr[i]]
+    heapify(arr, largest, len)
+  }
+}
+
+/**
+ * Sorts an array of numbers using the Heap Sort algorithm.
+ *
+ * @param arr - The array of numbers to be sorted.
+ * @returns The sorted array.
+ */
+const heapSort = (arr: number[]) => {
+  const len = arr.length
+  for (let i = Math.floor(len / 2) - 1; i >= 0; i--) {
+    heapify(arr, i, len)
+  }
+  for (let i = len - 1; i >= 0; i--) {
+    ;[arr[0], arr[i]] = [arr[i], arr[0]]
+    heapify(arr, 0, i)
+  }
+  return arr
+}
