@@ -210,7 +210,7 @@ class ProjectItem
     event.dataTransfer!.effectAllowed = 'move'
   }
 
-  dragEndHandler(event: DragEvent): void {}
+  dragEndHandler(_: DragEvent): void {}
 }
 
 // project list class
