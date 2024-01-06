@@ -1,19 +1,14 @@
-import fs from 'node:fs/promises'
-import path from 'node:path'
-import BubbleSort from './test.js'
 import { CsvFileReader } from './CsvFileReader.js'
-enum MatchResult {
-  homeWin = 'H',
-  awayWin = 'A',
-  draw = 'D',
-}
+import { MatchResult } from './constants/index.js'
 
+import type { MatchData } from './CsvFileReader.js'
 const reader = new CsvFileReader('football')
 await reader.read()
 
 const res = analysis(reader.data)
 
-function analysis(data: string[][]) {
+function analysis(data: MatchData[]) {
+  console.log('🚀 ~ file: index.ts:14 ~ analysis ~ data:', data)
   let manUnitedWins = 0
   for (let match of data) {
     if (
@@ -26,6 +21,3 @@ function analysis(data: string[][]) {
   return manUnitedWins
 }
 console.log('🚀 ~ file: index.ts:17 ~ analysis ~ analysis:', res)
-
-const sorted = BubbleSort([2, 9, 3, 5])
-console.log('🚀 ~ file: index.ts:16 ~ sorted:', sorted)
