@@ -1,8 +1,8 @@
-import { CsvFileReader } from './CsvFileReader.js'
+import { MatchReader } from './MatchReader.js'
 import { MatchResult } from './constants/index.js'
 
-import type { MatchData } from './CsvFileReader.js'
-const reader = new CsvFileReader('football')
+import type { MatchData } from './MatchReader.js'
+const reader = new MatchReader('football')
 await reader.read()
 
 const res = analysis(reader.data)
